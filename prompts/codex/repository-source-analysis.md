@@ -36,6 +36,13 @@ RULES
 - Cite important source paths, classes/functions, entry points, configs, or commands.
 - Clearly mark anything uncertain as `Unknown` or `Needs verification`.
 - Keep documentation concise. Do not repeat the same explanation across files.
+- Follow Progressive Disclosure: scan first, drill down later.
+- Root/index documents are navigation maps, not full explanations.
+- Prefer checklists, bullets, tables, diagrams, and links over long paragraphs.
+- At summary/index levels, keep each item to one line when possible; maximum two lines if necessary.
+- If an explanation needs more space, keep only the summary at the current level and move the detail into a linked child document.
+- Do not place low-level evidence, full command lists, port/config details, or long uncertainty reasoning in the root README unless essential for orientation.
+- Preserve important detail by moving it down a level instead of deleting it.
 - Create detail files only for meaningful features.
 
 OUTPUT
@@ -51,13 +58,17 @@ OUTPUT
 
 ### README.md
 
+Repository-level navigation map. Keep it highly scannable.
+
 Include only:
 - Purpose
 - High-level system summary
 - Main entry points
 - Feature map
 - Links to ARCHITECTURE.md and feature documents
-- Important unknowns / areas not fully verified
+- Important unknowns / areas not fully verified, as short one-line items
+
+Do not expand feature behavior, implementation evidence, protocol details, or long reasoning here. Link to the relevant detail document instead.
 
 ### ARCHITECTURE.md
 
@@ -72,6 +83,8 @@ Describe:
 Prefer a compact Mermaid diagram when useful.
 
 ### features/README.md
+
+Feature index only.
 
 For each feature:
 - Name
@@ -111,14 +124,17 @@ Only important behavior discovered in source.
 
 QUALITY BAR
 A developer unfamiliar with the repository should be able to:
-1. open README.md and understand the system quickly;
-2. find all major features;
+1. scan README.md and understand the system quickly;
+2. find all major features without reading long paragraphs;
 3. open one feature file and trace its implementation in source;
-4. distinguish verified behavior from assumptions.
+4. distinguish verified behavior from assumptions;
+5. drill down only when more detail is needed.
 
 Before finishing:
 - re-check the feature list against the repository;
 - remove duplicated information;
+- shorten summary/index items that exceed two lines;
+- move deep explanations to the appropriate detail file;
 - ensure every important claim can be traced to source code;
 - report the generated files and any areas that could not be confidently analyzed.
 ```
