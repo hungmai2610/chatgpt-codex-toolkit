@@ -27,6 +27,8 @@ Read the source code and build a concise, evidence-based documentation set descr
 
 RULES
 - Read-only analysis. Do not modify production source code.
+- All generated documentation must be written in Vietnamese.
+- Keep technical terms, code identifiers, file paths, API names, class/function names, config keys, and commands in their original form when clearer than translating them.
 - Derive behavior from actual code, not assumptions.
 - Use REPO_DESCRIPTION only as context; verify it against the source.
 - Focus on meaningful product/system features, not individual functions/files.
